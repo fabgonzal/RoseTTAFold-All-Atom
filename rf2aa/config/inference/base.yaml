@@ -12,7 +12,7 @@ na_inputs: null
 sm_inputs: null
 covale_inputs:  null
 residue_replacement: null
-
+skip_template: True
 chem_params:
   use_phospate_frames_for_NA: True
   use_cif_ordering_for_trp: True
