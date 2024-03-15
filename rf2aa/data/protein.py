@@ -53,7 +53,7 @@ def get_templates(
 
 
 def load_protein(msa_file, hhr_fn, atab_fn, model_runner):
-    msa, ins, taxIDs = parse_a3m(msa_file)
+    msa, ins, taxIDs = parse_a3m(str(msa_file))
     # NOTE: this next line is a bug, but is the way that
     # the code is written in the original implementation!
     ins[0] = msa[0]
@@ -66,8 +66,8 @@ def load_protein(msa_file, hhr_fn, atab_fn, model_runner):
         xyz_t, t1d, mask_t, _ = get_templates(
             L,
             model_runner.ffdb,
-            hhr_fn,
-            atab_fn,
+            str(hhr_fn),
+            str(atab_fn),
             seqID_cut=model_runner.config.loader_params.seqid,
             n_templ=model_runner.config.loader_params.n_templ,
             deterministic=model_runner.deterministic,
